@@ -1,6 +1,6 @@
 <resume-info>
 
-<last-update-date>September 20, 2021</last-update-date>
+<last-update-date>September 21, 2021</last-update-date>
 
 <heading-info>
   <name>George Chadderdon</name>
@@ -11,6 +11,7 @@
   <github-url>https://github.com/gchadder3</github-url>
 </heading-info>
 
+<!--
 <objective>
   <general-option>Developer / Analyst in machine learning, AI, or data science</general-option>
   <machine-learning-option>Machine Learning Engineer</machine-learning-option>
@@ -19,37 +20,34 @@
   <python-dev-option>Python Developer</python-dev-option>
   <web-dev-option>Web Developer</web-dev-option>
 </objective>
+-->
 
 <summary>
   <summary-item>Creative, versatile, mathematically capable computer scientist / software developer / data analyst with expertise in artificial intelligence (AI), machine learning (ML), pattern recognition, and computational neuroscience.</summary-item>
-  <summary-item>Writes well-documented, modular code.</summary-item>
+<!--  <summary-item>Writes well-documented, modular code.</summary-item> -->
   <summary-item>Rapidly-learning self-starter able to quickly acquire understanding of new applications, tools, languages, and systems.</summary-item>
   <summary-item>An intuitive big-picture thinker capable of (and professionally accustomed to) intense detail-focus.</summary-item>
   <summary-item>Good communication skills: published researcher, excellent writer, has presented talks at conferences, submitted and won a patent, won a grant proposal (SBIR Phase I), has teaching experience.</summary-item>
-  <summary-item>A team player, receptive to critical feedback, willing to provide documentation of work to facilitate understanding of future users/developers.</summary-item>
+<!--  <summary-item>A team player, receptive to critical feedback, willing to provide documentation of work to facilitate understanding of future users/developers.</summary-item> -->
 </summary>
 
 <qualifications-skills>
+  <qual-skill-item>17 years of industry and academic experience in statistical data analysis, pattern recognition, and machine learning (see LinkedIn page for more complete work history)</qual-skill-item>
+  
   <qual-skill-list>
-    <qual-skill-class>10 years of industry software development experience applied to</qual-skill-class>
-    <qual-skill-item>physiological stress detection</qual-skill-item>
-    <qual-skill-item>speech recognition</qual-skill-item>
-    <qual-skill-item>target detection and tracking</qual-skill-item>
-    <qual-skill-item>signal processing/classification</qual-skill-item>
-    <qual-skill-item>machine health monitoring</qual-skill-item>
-    <qual-skill-item>computer gaming</qual-skill-item>
-    <qual-skill-item>medical records analysis</qual-skill-item>
-    <qual-skill-item>global health program optimization</qual-skill-item>
-    <qual-skill-item>webifying of scientific data presentation</qual-skill-item>
+    <qual-skill-class>Data Analytic Tools</qual-skill-class>
+    <qual-skill-item>Python (numpy/scipy/matplotlib/pandas/scikit-learn)</qual-skill-item>
+    <qual-skill-item>Excel</qual-skill-item>
+    <qual-skill-item>R (RStudio)</qual-skill-item>
+    <qual-skill-item>SPSS</qual-skill-item>
+    <qual-skill-item>MATLAB</qual-skill-item>
   </qual-skill-list>
 
   <qual-skill-list>
-    <qual-skill-class>Strong educational / research background in</qual-skill-class>
-    <qual-skill-item>artificial intelligence</qual-skill-item>
-    <qual-skill-item>cognitive science</qual-skill-item>
-    <qual-skill-item>neuropsychology</qual-skill-item>
-    <qual-skill-item>computational neuroscience</qual-skill-item>
-    <qual-skill-item>mathematical modeling</qual-skill-item>
+    <qual-skill-class>Databases</qual-skill-class>
+    <qual-skill-item>MySQL</qual-skill-item>
+    <qual-skill-item>Redis</qual-skill-item>
+    <qual-skill-item>Postgres</qual-skill-item>
   </qual-skill-list>
 
   <qual-skill-list>
@@ -63,10 +61,33 @@
     <qual-skill-item>FFT spectral analysis</qual-skill-item>
     <qual-skill-item>principal component analysis</qual-skill-item>
   </qual-skill-list>
+
+  <qual-skill-list>
+    <qual-skill-class>Extensive applied mathematical training</qual-skill-class>
+    <qual-skill-item>calculus of single and multiple variables</qual-skill-item>
+    <qual-skill-item>differential equations</qual-skill-item>
+    <qual-skill-item>dynamical systems</qual-skill-item>
+    <qual-skill-item>linear algebra</qual-skill-item>
+    <qual-skill-item>probability and statistics</qual-skill-item>
+    <qual-skill-item>math modeling</qual-skill-item>
+    <qual-skill-item>stochastic process modeling</qual-skill-item>
+    <qual-skill-item>discrete mathematics</qual-skill-item>
+    <qual-skill-item>mathematical psychology</qual-skill-item>
+  </qual-skill-list>
+  
+  <qual-skill-item>Statistics and research methods (experimental design) training as a doctoral student in Psychology and Cognitive Science, including teach-assisting for undergraduate and graduate statistics courses and teaching a psychology research methods class</qual-skill-item>
   
   <qual-skill-list>
-    <qual-skill-class>Robotics Experience</qual-skill-class>
-    <qual-skill-item>control of Barrett Technologies WAM robotic arm reaching through libbarret C++ library and socket communication with Python processes on external PC</qual-skill-item>
+    <qual-skill-class>10 years of industry software development experience applied to</qual-skill-class>
+    <qual-skill-item>physiological stress detection</qual-skill-item>
+    <qual-skill-item>speech recognition</qual-skill-item>
+    <qual-skill-item>target detection and tracking</qual-skill-item>
+    <qual-skill-item>signal processing/classification</qual-skill-item>
+    <qual-skill-item>machine health monitoring</qual-skill-item>
+    <qual-skill-item>computer gaming</qual-skill-item>
+    <qual-skill-item>medical records analysis</qual-skill-item>
+    <qual-skill-item>global health program optimization</qual-skill-item>
+    <qual-skill-item>webifying of scientific data presentation</qual-skill-item>
   </qual-skill-list>
 
   <qual-skill-list>
@@ -82,25 +103,11 @@
   </qual-skill-list>
   
   <qual-skill-list>
-    <qual-skill-class>Data Analytic Tools</qual-skill-class>
-    <qual-skill-item>Python (numpy/scipy/matplotlib/pandas/scikit-learn)</qual-skill-item>
-    <qual-skill-item>Excel</qual-skill-item>
-    <qual-skill-item>R (RStudio)</qual-skill-item>
-    <qual-skill-item>SPSS</qual-skill-item>
-  </qual-skill-list>
-
-  <qual-skill-list>
-    <qual-skill-class>Expert Systems</qual-skill-class>
-    <qual-skill-item>JESS</qual-skill-item>
-    <qual-skill-item>Soar</qual-skill-item>
-  </qual-skill-list>
-
-  <qual-skill-list>
     <qual-skill-class>Operating Systems</qual-skill-class>
     <qual-skill-item>Linux/UNIX</qual-skill-item>
     <qual-skill-item>Windows 10</qual-skill-item>
   </qual-skill-list>
-  
+
   <qual-skill-list>
     <qual-skill-class>Web Design/Programming Experience</qual-skill-class>
     <qual-skill-item>Flask</qual-skill-item>
@@ -111,20 +118,26 @@
     <qual-skill-item>CSS</qual-skill-item>
     <qual-skill-item>D3.js</qual-skill-item>
   </qual-skill-list>
-
+  
+  <qual-skill-item>Extensive use of Word and PowerPoint for documentation and presentation development</qual-skill-item>
+  
+<!--  
   <qual-skill-list>
-    <qual-skill-class>Databases</qual-skill-class>
-    <qual-skill-item>MySQL</qual-skill-item>
-    <qual-skill-item>Redis</qual-skill-item>
-    <qual-skill-item>Postgres</qual-skill-item>
+    <qual-skill-class>Expert Systems</qual-skill-class>
+    <qual-skill-item>JESS</qual-skill-item>
+    <qual-skill-item>Soar</qual-skill-item>
   </qual-skill-list>
+-->
 
+<!--
   <qual-skill-list>
     <qual-skill-class>Version Control</qual-skill-class>
     <qual-skill-item>Git/GitHub</qual-skill-item>
     <qual-skill-item>Mercurial</qual-skill-item>
   </qual-skill-list>
+-->
 
+<!--
   <qual-skill-list>
     <qual-skill-class>Remote Collaboration Tools</qual-skill-class>
     <qual-skill-item>Slack</qual-skill-item>
@@ -138,12 +151,32 @@
     <qual-skill-item>Google Drive</qual-skill-item>
     <qual-skill-item>Dropbox</qual-skill-item>
   </qual-skill-list>
+-->
 
-
+<!--
   <qual-skill-list>
     <qual-skill-class>Other Dev Tools</qual-skill-class>
     <qual-skill-item>Docker (Docker Hub account: https://hub.docker.com/u/gchadder3)</qual-skill-item>
   </qual-skill-list>
+-->
+
+<!-- 
+  <qual-skill-list>
+    <qual-skill-class>Strong educational / research background in</qual-skill-class>
+    <qual-skill-item>artificial intelligence</qual-skill-item>
+    <qual-skill-item>cognitive science</qual-skill-item>
+    <qual-skill-item>neuropsychology</qual-skill-item>
+    <qual-skill-item>computational neuroscience</qual-skill-item>
+    <qual-skill-item>mathematical modeling</qual-skill-item>
+  </qual-skill-list>
+-->
+
+<!--  
+  <qual-skill-list>
+    <qual-skill-class>Robotics Experience</qual-skill-class>
+    <qual-skill-item>control of Barrett Technologies WAM robotic arm reaching through libbarret C++ library and socket communication with Python processes on external PC</qual-skill-item>
+  </qual-skill-list>
+-->
 </qualifications-skills>
 
 <work-experience>
@@ -155,19 +188,28 @@
     <location>Melbourne, Australia</location>
     <roles>
       <role-item>
-        full-stack web software development (Python and JavaScript) for public health program budget allocation websites
+        Was developing an open source web application framework (Sciris) in Python (Flask and Twisted) and Vue.js for allowing researchers using Python to easily build simple and complex (user-sessioned) web applications for simulation and data presentation.
       </role-item>
       <role-item>
-        R&amp;D related to the optimization algorithm
+        Python back-end and JavaScript front-end code development, debugging, and performance improvement in Optima's HIV epidemiology modeling web application for optimal allocation of government funding of national programs related to prevention and treatment of HIV; as well as other Optima sites related to optimization for malnutrition, tuberculosis, and hepatitis C.
       </role-item>
       <role-item>
-        technical assistance for researchers and other users of the software
+        Led effort with transition of front-end code from Angular 1 to Vue.js, and full-stack web application infrastructure into new Sciris framework, across all of the Optima web application sites.
+      </role-item>        
+      <role-item>
+        Analyzed performance of the budget allocation optimization algorithm and suggested parameter choices to be used by the researchers using the HIV model.
       </role-item>
       <role-item>
-        assistance writing journal publications
-      </role-item>      
+        Developed object-oriented batch-running code which used the Python multiprocessing library to run HIV model batch simulations more selectively on the company's multi-core high performance computer.
+      </role-item>
+<!--      <role-item>
+        Thoroughly learned the workings and architecture of the entire Optima HIV website, acquiring knowledge of and experience with Angular 1, Flask, Postgres, Redis, and Twisted.
+      </role-item> -->
+<!--      <role-item>
+        Fixed a long-standing (2 years) problem with browser over-caching of pages which had forced the site's users to run the site in a private browser window.
+      </role-item> -->
     </roles>
-    <description>Was developing an open source web application framework (Sciris) in Python (Flask and Twisted) and Vue.js for allowing researchers using Python to easily build simple and complex (user-sessioned) web applications for simulation and data presentation.  Aided with Python back-end and JavaScript front-end code development, debugging, and performance improvement in Optima's HIV epidemiology modeling web application for optimal allocation of government funding of national programs related to prevention and treatment of HIV; as well as other Optima sites related to optimization for malnutrition, tuberculosis, and hepatitis C. Analyzed performance of the budget allocation optimization algorithm and suggested parameter choices to be used by the researchers using the HIV model.  Developed object-oriented batch-running code which used the Python multiprocessing library to run HIV model batch simulations more selectively on the company's multi-core high performance computer. Thoroughly learned the workings and architecture of the entire Optima HIV website, acquiring knowledge of and experience with Angular 1, Flask, Postgres, Redis, and Twisted.  Fixed a long-standing (2 years) problem with browser over-caching of pages which had forced the site's users to run the site in a private browser window.  Led effort with transition of front-end code from Angular 1 to Vue.js, and full-stack web application infrastructure into new Sciris framework, across all of the Optima web application sites.</description>
+<!--    <description>Was developing an open source web application framework (Sciris) in Python (Flask and Twisted) and Vue.js for allowing researchers using Python to easily build simple and complex (user-sessioned) web applications for simulation and data presentation.  Python back-end and JavaScript front-end code development, debugging, and performance improvement in Optima's HIV epidemiology modeling web application for optimal allocation of government funding of national programs related to prevention and treatment of HIV; as well as other Optima sites related to optimization for malnutrition, tuberculosis, and hepatitis C. Analyzed performance of the budget allocation optimization algorithm and suggested parameter choices to be used by the researchers using the HIV model.  Developed object-oriented batch-running code which used the Python multiprocessing library to run HIV model batch simulations more selectively on the company's multi-core high performance computer. Thoroughly learned the workings and architecture of the entire Optima HIV website, acquiring knowledge of and experience with Angular 1, Flask, Postgres, Redis, and Twisted.  Fixed a long-standing (2 years) problem with browser over-caching of pages which had forced the site's users to run the site in a private browser window.  Led effort with transition of front-end code from Angular 1 to Vue.js, and full-stack web application infrastructure into new Sciris framework, across all of the Optima web application sites.</description> -->
   </experience-item>
 
   <experience-item>
@@ -176,27 +218,30 @@
     <job-title>Senior Systems Modeler</job-title>
     <organization>Design Interactive, Inc.</organization>
     <location>Orlando, FL</location>
-    <roles>
+    <roles> 
       <role-item>
-        AI and machine learning algorithm development
+        Used Python, Excel, and SPSS to analyze physiological (sensor), psychological (questionnaire), and simulation data for projects involving human stress level evaluation, eye-tracking, mental workload and task duration modeling, and mining of electronic medical records.
       </role-item>
       <role-item>
-        analysis of human physiological and psychological data and simulation data
+        Developed and patented (accepted 2017) stress / distress detector algorithm for use in a mobile phone-based therapeutic sensor / software system for monitoring and managing chronic stress. Algorithm was developed (using the scikit-learn ML library) by performing cleaning, exploratory data analysis, and supervised learning on human subject heart rate, skin conductance, and movement (accelerometer) data under different stress-task conditions.
+      </role-item>    
+      <role-item>
+        Developed classifier of human resilience to stress based on subject physiological and self-assessment data.
+      </role-item>      
+      <role-item>
+        Developed Naive Bayesian inference algorithm to estimate medical condition (e.g., diabetes, chronic heart disease) likelihood given observed symptoms or test-results as part of an expert system for assessing physician performance using evidence from electronic health records.
       </role-item>
       <role-item>
-        technical proposal writing
+        Co-wrote a winning SBIR proposal involving modeling the tradeoff between security measures and usability in medical devices in a clinical workflow environment, and co-authored other proposals.
       </role-item>
       <role-item>
-        patent writing
-      </role-item> 
-      <role-item>
-        providing advice on AI and machine learning for other projects and teams
+        Modeled pilot task duration and mental workload in helicopter missions using IMPRINT simulator.
       </role-item>
       <role-item>
-        assistance writing journal and conference publications
-      </role-item>  
+        Provided advice on AI and machine learning approaches for proposals and projects.
+      </role-item>      
     </roles>
-    <description>Developed classifiers and data algorithms for projects involving psychological and physiological assessment and training. Developed and wrote patent (accepted in 2017) for a stress / distress detector algorithm for use in a therapeutic sensor / software system for tracking and treating chronic stress.  Developed classifier of human resilience to stress based on subject physiological and self-assessment data.  Was involved with expert system development for inferring physician skill degradation based on evidence from electronic health records.  Co-wrote a winning SBIR proposal involving modeling the tradeoff between security measures and usability in medical devices in a clinical workflow environment.  Was involved in modeling pilot task duration and mental workload in helicopter missions using IMPRINT simulator.  Provided advice on intelligent systems and modeling approaches for proposals and projects.</description>
+<!--    <description>Used Python, Excel, and SPSS to analyze physiological (sensor), psychological (questionnaire), and simulation data for projects involving human stress level evaluation, eye-tracking, mental workload and task duration modeling, and mining of electronic medical records. Developed and patented (accepted 2017) stress / distress detector algorithm for use in a mobile phone-based therapeutic sensor / software system for monitoring and managing chronic stress. Algorithm was developed (using the scikit-learn ML library) by performing cleaning, exploratory data analysis, and supervised learning on human subject heart rate, skin conductance, and movement (accelerometer) data under different stress-task conditions. Developed classifier of human resilience to stress based on subject physiological and self-assessment data.  Developed Naive Bayesian inference algorithm to estimate medical condition (e.g., diabetes, chronic heart disease) likelihood given observed symptoms or test-results as part of an expert system for assessing physician performance using evidence from electronic health records.  Co-wrote a winning SBIR proposal involving modeling the tradeoff between security measures and usability in medical devices in a clinical workflow environment, and co-authored other SBIRs.  Modeled pilot task duration and mental workload in helicopter missions using IMPRINT simulator.  Provided advice on AI and machine learning approaches for proposals and projects.</description> -->
   </experience-item>
 
   <experience-item>
@@ -207,13 +252,22 @@
     <location>Brooklyn, NY</location>
     <roles>
       <role-item>
-        research (and development) related to improvement of brain-machine interface technology for prosthetic arm reaching
+        Analyzed and published statistical performance results as a part of computational neuroscience research involving spiking neuronal modeling for improvement of prosthetic brain-machine interface technology.
       </role-item>
       <role-item>
-        software development of Python framework for NEURON simulator-based neural networks
-      </role-item> 
+        Developed a NEURON-based model of reinforcement learning in primary motor cortex (M1) for controlling a virtual arm.
+      </role-item>
+<!--      <role-item>
+        Developed a NEURON-based multilayer spiking model of M1 based on mouse M1 connectivity data.
+      </role-item> -->
+<!--      <role-item>
+        Began development of socket interface between NEURON simulation model and Barrett Technologies Whole Arm Manipulator (WAM) robotic arm.
+      </role-item> -->      
+<!--      <role-item>
+        Began development of a Python framework for building network models in NEURON.
+      </role-item> -->
     </roles>
-    <description>Conducted computational neuroscience research involving spiking neuronal modeling for improvement of prosthetic brain-machine interface technology.  Developed a NEURON-based model of reinforcement learning in primary motor cortex (M1) for controlling a virtual arm.  Developed a NEURON-based multilayer spiking model of M1 based on mouse M1 connectivity data.  Began development of socket interface between NEURON simulation model and Barrett Technologies Whole Arm Manipulator (WAM) robotic arm. Began development of a Python framework for building network models in NEURON.</description>
+<!--    <description>Conducted computational neuroscience research involving spiking neuronal modeling for improvement of prosthetic brain-machine interface technology.  Developed a NEURON-based model of reinforcement learning in primary motor cortex (M1) for controlling a virtual arm.  Developed a NEURON-based multilayer spiking model of M1 based on mouse M1 connectivity data.  Began development of socket interface between NEURON simulation model and Barrett Technologies Whole Arm Manipulator (WAM) robotic arm. Began development of a Python framework for building network models in NEURON.</description> -->
   </experience-item>
   
   <experience-item>
@@ -224,12 +278,13 @@
     <location>Peoria, IL</location>
     <roles>
       <role-item>
-        software development of a web-based data collection and reporting system for a church district
+        Developed and deployed a web database application using PHP/MySQL to optimize church online statistics collection from pastors and statistics review and reporting by the district office.
       </role-item>
     </roles>
-    <description>Developed and deployed a web database application using PHP/MySQL to optimize church online statistics collection from pastors and statistics review and reporting by the district office.</description>
+<!--    <description>Developed and deployed a web database application using PHP/MySQL to optimize church online statistics collection from pastors and statistics review and reporting by the district office.</description> -->
   </experience-item>
- 
+
+<!-- 
   <experience-item>
     <start-date>1/02</start-date>
     <end-date>4/09</end-date>
@@ -238,18 +293,22 @@
     <location>Bloomington, IN</location>
     <roles>
       <role-item>
-        computational neuroscience graduate research
+        Used MATLAB extensively in development, simulation, and data analysis of computational models of neural mechanisms of reinforcement learning and working memory.
       </role-item>
       <role-item>
-        learning about neuroscience and math modeling
+        Dissertation work developed an integrative theory and corresponding model of neural substrate and dopaminergic mechanisms for reinforcement learning of simple stimulus-response tasks.
       </role-item>
       <role-item>
-        assistance of advisor with grant writing
-      </role-item>      
+        Published journal article proposing a measuring scale for machine volition and also an article on a model of dopaminergic neuromodulation of working memory maintenance.
+      </role-item> 
+      <role-item>
+        Assisted advisor with grant writing.
+      </role-item>  
     </roles>
-    <description>Used MATLAB extensively in development, simulation, and data analysis of computational models of neural mechanisms of reinforcement learning and working memory.  Dissertation work developed an integrative theory and corresponding model of neural substrate and dopaminergic mechanisms for reinforcement learning of simple stimulus-response tasks. Published journal article proposing a measuring scale for machine volition and also an article on a model of dopaminergic neuromodulation of working memory maintenance.</description>
   </experience-item> 
-  
+-->
+
+<!-- 
   <experience-item>
     <start-date>9/05</start-date>
     <end-date>1-06</end-date>
@@ -258,32 +317,16 @@
     <location>Bloomington, IN</location>
     <roles>
       <role-item>
-        grading for statistics classes
+        Taught a semester-long psychology undergraduate introduction to psychology research methods course (including material on experimental design and basic statistics) from own lesson plan.
       </role-item>
       <role-item>
-        teaching / lecturing
+        Throughout years at IU, graded for statistics classes.
       </role-item>      
     </roles>
-    <description>Taught a semester-long psychology undergraduate introduction to psychology research methods course from own lesson plan.</description>
   </experience-item> 
+-->
 
-  <experience-item>
-    <start-date>7/00</start-date>
-    <end-date>12/01</end-date>
-    <job-title>AI Programmer, Game Developer</job-title>
-    <organization>Magic Lantern Playware</organization>
-    <location>Monmouth, IL</location>
-    <roles>
-      <role-item>
-        AI software development for Windows/PC games
-      </role-item>
-      <role-item>
-        game design and brainstorming
-      </role-item>      
-    </roles>
-    <description>Designed and coded opponent tactical artificial intelligence for Windows/PC video games using Visual C++.</description>
-  </experience-item> 
-  
+<!-- 
   <experience-item>
     <start-date>6/99</start-date>
     <end-date>12/99</end-date>
@@ -292,18 +335,16 @@
     <location>Rancho Bernardo, CA</location>
     <roles>
       <role-item>
-        design of speech recognition architecture for electronic jukebox
+        Designed and tested performance of hidden Markov model-based speech recognition / natural language understanding software (using HTK and TIMIT corpus) for a voice-controlled jukebox system.
       </role-item>
       <role-item>
-        software development (Java) of electronic jukebox prototype user interface
-      </role-item>
-      <role-item>
-        testing and analysis of speech recognizer performance
-      </role-item>      
+        Created Java GUI demo prototype for the jukebox system (using Visual Cafe).
+      </role-item>    
     </roles>
-    <description>Designed and developed hidden Markov model-based speech recognition / natural language understanding software (using HTK and TIMIT corpus) and created Java GUI demo prototype for a voice-controlled jukebox system (using Visual Cafe).</description>
   </experience-item> 
+-->
 
+<!--
   <experience-item>
     <start-date>12/94</start-date>
     <end-date>5/99</end-date>
@@ -312,21 +353,19 @@
     <location>La Jolla, CA</location>
     <roles>
       <role-item>
-        AI and machine learning algorithm development
+        Designed and coded AI / ML algorithms (mainly in C / UNIX environment) for: hidden Markov model-based phoneme segmentation, sonar detection clustering, communication signal classification, engine fault classification using vibration and operational data, evolutionary programming and genetic algorithms for stellarator parameter optimization, Kalman filter-based tracking and data fusion, fuzzy logic control, and target threat evaluation.
       </role-item>
       <role-item>
-        technical proposal writing
+        Coauthored 2 SBIRs and 4 conference papers.
       </role-item>
       <role-item>
-        assistance writing journal and conference publications
+        Cleared up to TS-SCI.
       </role-item>
-      <role-item>
-        software documentation
-      </role-item>      
     </roles>
-    <description>Designed and coded algorithms (mainly in C / UNIX environment) for: hidden Markov model-based phoneme segmentation, sonar detection clustering, communication signal classification, engine fault classification using vibration and operational data, evolutionary programming and genetic algorithms for stellarator parameter optimization, Kalman filter-based tracking and data fusion, fuzzy logic control, and target threat evaluation.  Coauthored 2 SBIRs and 4 conference papers.  Cleared up to TS-SCI.</description>
   </experience-item>
+-->
 
+<!--
   <experience-item>
     <start-date>10/94</start-date>
     <end-date>2/95</end-date>
@@ -335,20 +374,10 @@
     <location>La Jolla, CA</location>
     <roles>
       <role-item>
-        graduate research related to AI and neurocomputation
-      </role-item>
-      <role-item>
-        learning about AI and neurocomputation
-      </role-item>
-      <role-item>
-        learning about theoretical aspects of computer and cognitive science
-      </role-item>
-      <role-item>
-        grading for courses
-      </role-item>      
+        Conducted research and coauthored and presented paper on audiovisual lip-reading digit-recognition using hidden Markov modeling.
+      </role-item>     
     </roles>
-    <description>Conducted research and coauthored and presented paper on audiovisual lip-reading digit-recognition using hidden Markov modeling.</description>
-  </experience-item>
+  </experience-item> -->
 </work-experience>
 
 <education>
@@ -363,9 +392,9 @@
       Psychology and Cognitive Science with Certificate in Modeling in Cognitive Science
     </major>
     <completion-year>2009</completion-year>
-    <more-info>
+<!--    <more-info>
       Dissertation work was a computational neuroscience study of the neural substrate of reinforcement learning (title: "A Neurocomputational Model of the Functional Role of Dopamine in Stimulus-Response Task Learning and Performance")
-    </more-info>
+    </more-info> -->
   </education-item>
   
   <education-item>
@@ -403,17 +432,24 @@
 </education>
 
 <special-coursework>
-  <coursework-item>cognitive neuroscience</coursework-item>
-  <coursework-item>computational neuroscience</coursework-item>
-  <coursework-item>neuropsychology</coursework-item>
-  <coursework-item>philosophical foundations of cognitive science</coursework-item>
+  <coursework-item>statistics</coursework-item>
+  <coursework-item>probability and random processes</coursework-item>
+  <coursework-item>calculus</coursework-item>
+  <coursework-item>ordinary and partial differential equations</coursework-item>
   <coursework-item>dynamical systems</coursework-item>
-  <coursework-item>mathematical psychology</coursework-item>
-  <coursework-item>partial differential equations</coursework-item>
-  <coursework-item>artificial intelligence</coursework-item>
+  <coursework-item>linear algebra</coursework-item>
+  <coursework-item>discrete math</coursework-item>
+  <coursework-item>signals and systems</coursework-item>
+  <coursework-item>data structures</coursework-item>
+  <coursework-item>algorithms</coursework-item>
+  <coursework-item>psychology research methods</coursework-item>
+  <coursework-item>mathematical psychology (modeling cognitive processes with stochastic distributions)</coursework-item>
   <coursework-item>pattern recognition</coursework-item>
+  <coursework-item>neural networks / neurocomputing</coursework-item>
   <coursework-item>speech recognition</coursework-item>
+  <coursework-item>artificial intelligence</coursework-item>
   <coursework-item>expert systems</coursework-item>
+  <coursework-item>computational neuroscience</coursework-item>
   <coursework-item>big data analytics tools (Hadoop ecosystem: Hadoop, Sqoop, Pig, Hive; Spark)</coursework-item>
 </special-coursework>
 

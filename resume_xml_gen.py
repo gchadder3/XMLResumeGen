@@ -1,7 +1,7 @@
 """
 resume_xml_parse.py -- resume parser
 
-Last updated: 9/20/21 (gchadder3)
+Last updated: 9/22/21 (gchadder3)
 """
 
 import xml.etree.ElementTree as ET
@@ -77,8 +77,8 @@ htmlEndText_2 = """
 
 if __name__ == '__main__':
     # Set the format ('plaintext_1', 'html_1', 'html_2')
-    outFormat = 'plaintext_1'
-#    outFormat = 'html_1'
+#    outFormat = 'plaintext_1'
+    outFormat = 'html_1'
 #    outFormat = 'html_2'
     
     # Extract the tree from the file.
@@ -165,19 +165,26 @@ if __name__ == '__main__':
             print('<div id="qualifications-skills">')
             print('<p style="margin-bottom:0px"><u>QUALIFICATIONS / TECHNICAL SKILLS</u>:</p>')
             print('<ul style="margin-top:0px">')
-        # For each qual-skill-list...        
-        for qsklist in qualskills.iter('qual-skill-list'):             
-            className = fieldSanitize(qsklist.find('qual-skill-class').text)
-            if outFormat == 'plaintext_1':
-                print('\t* %s: ' % className, end='')
-            elif outFormat == 'html_1':
-                print('<li style="margin-top:0px">%s: ' % className, end='')            
-            firstqitem = True
-            for qitem in qsklist.iter('qual-skill-item'):
-                if not firstqitem:
-                    print(', ', end='')
-                print(fieldSanitize(qitem.text), end='')
-                firstqitem = False
+        # For each child element...
+        for qelem in qualskills:
+            if qelem.tag == 'qual-skill-item':
+                qelemText = fieldSanitize(qelem.text)
+                if outFormat == 'plaintext_1':
+                    print('\t* %s' % qelemText, end='')
+                elif outFormat == 'html_1':
+                    print('<li style="margin-top:0px">%s' % qelemText, end='')           
+            elif qelem.tag == 'qual-skill-list': 
+                className = fieldSanitize(qelem.find('qual-skill-class').text)
+                if outFormat == 'plaintext_1':
+                    print('\t* %s: ' % className, end='')
+                elif outFormat == 'html_1':
+                    print('<li style="margin-top:0px">%s: ' % className, end='')            
+                firstqitem = True
+                for qitem in qelem.iter('qual-skill-item'):
+                    if not firstqitem:
+                        print(', ', end='')
+                    print(fieldSanitize(qitem.text), end='')
+                    firstqitem = False
                 
             if outFormat == 'plaintext_1':
                 print('')
@@ -193,10 +200,12 @@ if __name__ == '__main__':
         raise LookupError('No <work-experience> tag found in file.')
     print('')
     if outFormat == 'plaintext_1':
-        print('EXPERIENCE:')
+#        print('EXPERIENCE:')
+        print('RECENT EXPERIENCE:')
     elif outFormat == 'html_1':
         print('<div id="work-experience">')
-        print('<p style="margin:0px"><u>EXPERIENCE</u>:</p>')
+#        print('<p style="margin:0px"><u>EXPERIENCE</u>:</p>')
+        print('<p style="margin:0px"><u>RECENT EXPERIENCE</u>:</p>')
     firstexpitem = True
     # For each experience-item...        
     for expitem in wexper.iter('experience-item'):  
