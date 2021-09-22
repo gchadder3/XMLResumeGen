@@ -4,6 +4,7 @@ resume_xml_parse.py -- resume parser
 Last updated: 9/22/21 (gchadder3)
 """
 
+import argparse
 import xml.etree.ElementTree as ET
 import re
 
@@ -76,13 +77,20 @@ htmlEndText_2 = """
 """
 
 if __name__ == '__main__':
-    # Set the format ('plaintext_1', 'html_1', 'html_2')
-#    outFormat = 'plaintext_1'
-    outFormat = 'html_1'
-#    outFormat = 'html_2'
+    # Parse the arguments from the command line.
+    parser = argparse.ArgumentParser(description='Parse an XML resume file and format and output a resume from it.')
+    parser.add_argument('-i', '--infile')
+    parser.add_argument('-f', '--format')
+    args = parser.parse_args()   
+    inFileName = 'resume_xml.xml'  # set the default in XML file
+    if args.infile is not None:
+        inFileName = args.infile
+    outFormat = 'plaintext_1'      # set the format ('plaintext_1', 'html_1', 'html_2')
+    if args.format is not None:
+        outFormat = args.format
     
     # Extract the tree from the file.
-    tree = ET.parse('resume_xml.xml')
+    tree = ET.parse(inFileName)
     # tree = ET.parse('Resume MindMap_scratch.mm')
     
     # Get the root element from the tree.
