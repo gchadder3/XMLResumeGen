@@ -1,7 +1,7 @@
 """
 resume_xml_parse.py -- resume parser
 
-Last updated: 9/22/21 (gchadder3)
+Last updated: 9/24/21 (gchadder3)
 """
 
 import argparse
@@ -129,27 +129,29 @@ if __name__ == '__main__':
     
     # Objective section...
     obj = root.find('./objective')
-    if obj is not None:
+    if obj is not None and not('hide' in obj.attrib and obj.attrib['hide'].lower() == 'true'):
 #        objchoice = obj.find('data-science-option')
         objchoice = obj.find('general-option')
+        headingStr = obj.attrib['sectionname'].upper()
         theField = fieldSanitize(objchoice.text)
         print('')
         if outFormat == 'plaintext_1':
-            print('OBJECTIVE: %s' % theField)
+            print('%s: %s' % (headingStr, theField))
         elif outFormat == 'html_1':
             print('<div id="objective">')
-            print('<p><u>OBJECTIVE</u>: %s</p>' % theField)
+            print('<p><u>%s</u>: %s</p>' % (headingStr, theField))
             print('</div>') 
             
     # Summary section...
     summary = root.find('./summary')
-    if summary is not None:
+    if summary is not None and not('hide' in summary.attrib and summary.attrib['hide'].lower() == 'true'):
+        headingStr = summary.attrib['sectionname'].upper()
         print('')
         if outFormat == 'plaintext_1':
-            print('SUMMARY:')
+            print('%s:' % headingStr)
         elif outFormat == 'html_1':
             print('<div id="summary">')
-            print('<p style="margin-bottom:0px"><u>SUMMARY</u>:</p>')  
+            print('<p style="margin-bottom:0px"><u>%s</u>:</p>' % headingStr)  
             print('<p style="margin:0px">', end='')            
         firstsumitem = True
         for sumitem in summary.iter('summary-item'):
@@ -165,13 +167,14 @@ if __name__ == '__main__':
             
     # Qualifications / Technical Skills section...
     qualskills = root.find('./qualifications-skills')
-    if qualskills is not None:
+    if qualskills is not None and not('hide' in qualskills.attrib and qualskills.attrib['hide'].lower() == 'true'):
+        headingStr = qualskills.attrib['sectionname'].upper()
         print('')
         if outFormat == 'plaintext_1':
-            print('QUALIFICATIONS / TECHNICAL SKILLS:')
+            print('%s:' % headingStr)
         elif outFormat == 'html_1':
             print('<div id="qualifications-skills">')
-            print('<p style="margin-bottom:0px"><u>QUALIFICATIONS / TECHNICAL SKILLS</u>:</p>')
+            print('<p style="margin-bottom:0px"><u>%s</u>:</p>' % headingStr)
             print('<ul style="margin-top:0px">')
         # For each child element...
         for qelem in qualskills:
@@ -206,64 +209,65 @@ if __name__ == '__main__':
     wexper = root.find('./work-experience')
     if wexper == None:
         raise LookupError('No <work-experience> tag found in file.')
-    print('')
-    if outFormat == 'plaintext_1':
-#        print('EXPERIENCE:')
-        print('RECENT EXPERIENCE:')
-    elif outFormat == 'html_1':
-        print('<div id="work-experience">')
-#        print('<p style="margin:0px"><u>EXPERIENCE</u>:</p>')
-        print('<p style="margin:0px"><u>RECENT EXPERIENCE</u>:</p>')
-    firstexpitem = True
-    # For each experience-item...        
-    for expitem in wexper.iter('experience-item'):  
-        start_date = fieldSanitize(expitem.find('start-date').text)
-        end_date = fieldSanitize(expitem.find('end-date').text)
-        job_title = fieldSanitize(expitem.find('job-title').text)
-        org = fieldSanitize(expitem.find('organization').text)
-        loc = fieldSanitize(expitem.find('location').text)
-        desc = expitem.find('description')
-        if desc is not None:
-            desc = fieldSanitize(desc.text)
-        if not firstexpitem:
-            print('')
+    if wexper is not None and not('hide' in wexper.attrib and wexper.attrib['hide'].lower() == 'true'):        
+        headingStr = wexper.attrib['sectionname'].upper()    
+        print('')
         if outFormat == 'plaintext_1':
-            print('%s-%s' % (start_date, end_date), end='')
-            print('\t', end='')
-            print(job_title, end='')
-            print(', ', end='')
-            print(org, end='')
-            print(', ', end='')
-            print(loc)
-            for ritem in expitem.iter('role-item'):
-                print('\t* ', end='')
-                print(fieldSanitize(ritem.text))
-            if desc is not None:
-                print(desc)
+            print('%s:' % headingStr)
         elif outFormat == 'html_1':
-            print('<div class="experience-item">')
-            print('<p style="margin:0px">%s-%s <b>%s, %s, %s</b></p>' % (start_date, end_date, job_title, org, loc))
-            print('<ul style="margin-top:0px">')
-            for ritem in expitem.iter('role-item'):
-                theField = fieldSanitize(ritem.text)
-                print('<li style="margin-top:0px">%s</li>' % theField)
-            print('</ul>')
+            print('<div id="work-experience">')
+            print('<p style="margin:0px"><u>%s</u>:</p>' % headingStr)
+        firstexpitem = True
+        # For each experience-item...        
+        for expitem in wexper.iter('experience-item'):  
+            start_date = fieldSanitize(expitem.find('start-date').text)
+            end_date = fieldSanitize(expitem.find('end-date').text)
+            job_title = fieldSanitize(expitem.find('job-title').text)
+            org = fieldSanitize(expitem.find('organization').text)
+            loc = fieldSanitize(expitem.find('location').text)
+            desc = expitem.find('description')
             if desc is not None:
-                print('<p style="margin-top:0px">%s</p>' % desc)            
+                desc = fieldSanitize(desc.text)
+            if not firstexpitem:
+                print('')
+            if outFormat == 'plaintext_1':
+                print('%s-%s' % (start_date, end_date), end='')
+                print('\t', end='')
+                print(job_title, end='')
+                print(', ', end='')
+                print(org, end='')
+                print(', ', end='')
+                print(loc)
+                for ritem in expitem.iter('role-item'):
+                    print('\t* ', end='')
+                    print(fieldSanitize(ritem.text))
+                if desc is not None:
+                    print(desc)
+            elif outFormat == 'html_1':
+                print('<div class="experience-item">')
+                print('<p style="margin:0px">%s-%s <b>%s, %s, %s</b></p>' % (start_date, end_date, job_title, org, loc))
+                print('<ul style="margin-top:0px">')
+                for ritem in expitem.iter('role-item'):
+                    theField = fieldSanitize(ritem.text)
+                    print('<li style="margin-top:0px">%s</li>' % theField)
+                print('</ul>')
+                if desc is not None:
+                    print('<p style="margin-top:0px">%s</p>' % desc)            
+                print('</div>')
+            firstexpitem = False            
+        if outFormat == 'html_1':
             print('</div>')
-        firstexpitem = False            
-    if outFormat == 'html_1':
-        print('</div>')
 
     # Education section...
     edu = root.find('./education')
-    if edu is not None:
+    if edu is not None and not('hide' in edu.attrib and edu.attrib['hide'].lower() == 'true'):
+        headingStr = edu.attrib['sectionname'].upper()
         print('')    
         if outFormat == 'plaintext_1':
-            print('EDUCATION:')
+            print('%s:' % headingStr)
         elif outFormat == 'html_1':
             print('<div id="education">')
-            print('<p style="margin:0px"><u>EDUCATION</u>:</p>')    
+            print('<p style="margin:0px"><u>%s</u>:</p>' % headingStr)    
         # For each education-item...
         for editem in edu.iter('education-item'):
             inst = editem.find('institution')
@@ -323,13 +327,14 @@ if __name__ == '__main__':
             
     # Special coursework section...
     speccoursework = root.find('./special-coursework')
-    if speccoursework is not None:
+    if speccoursework is not None and not('hide' in speccoursework.attrib and speccoursework.attrib['hide'].lower() == 'true'):
+        headingStr = speccoursework.attrib['sectionname'].upper()
         print('')
         if outFormat == 'plaintext_1':
-            print('SPECIALIZED COURSEWORK:')
+            print('%s:' % headingStr)
         elif outFormat == 'html_1':
             print('<div id="special-coursework">')
-            print('<p style="margin-bottom:0px"><u>SPECIALIZED COURSEWORK</u>:</p>')  
+            print('<p style="margin-bottom:0px"><u>%s</u>:</p>' % headingStr)  
             print('<p style="margin:0px">', end='')            
         firstcwitem = True
         for cwitem in speccoursework.iter('coursework-item'):
@@ -345,13 +350,14 @@ if __name__ == '__main__':
                      
     # Cerfications section...
     certifs = root.find('./certifications')
-    if certifs is not None:
+    if certifs is not None and not('hide' in certifs.attrib and certifs.attrib['hide'].lower() == 'true'):
+        headingStr = certifs.attrib['sectionname'].upper()
         print('')
         if outFormat == 'plaintext_1':
-            print('CERTIFICATIONS (see LinkedIn page for validations):')
+            print('%s (see LinkedIn page for validations):' % headingStr)
         elif outFormat == 'html_1':
             print('<div id="certifications">')
-            print('<p style="margin-bottom:0px"><u>CERTIFICATIONS</u> (see LinkedIn page for validations):</p>')  
+            print('<p style="margin-bottom:0px"><u>%s</u> (see LinkedIn page for validations):</p>' % headingStr)           
             print('<p style="margin:0px">', end='')            
         firstcitem = True
         for citem in certifs.iter('certification-item'):
@@ -367,14 +373,15 @@ if __name__ == '__main__':
             
     # Additional info section...
     addinfo = root.find('./additional-info')
-    if addinfo is not None:
+    if addinfo is not None and not('hide' in addinfo.attrib and addinfo.attrib['hide'].lower() == 'true'):
+        headingStr = addinfo.attrib['sectionname'].upper()
         theField = fieldSanitize(addinfo.text)
         print('')
         if outFormat == 'plaintext_1':
-            print('ADDITIONAL INFORMATION: %s' % theField)
+            print('%s: %s' % (headingStr, theField))
         elif outFormat == 'html_1':
             print('<div id="additional-info">')
-            print('<p><u>ADDITIONAL INFORMATION</u>: %s</p>' % theField)
+            print('<p><u>%s</u>: %s</p>' % (headingStr, theField))
             print('</div>')           
                 
     # If HTML, create end boiler-plate...
