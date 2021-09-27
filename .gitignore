@@ -1,7 +1,12 @@
 master_resume_*.xml
+machine_learning_resume_*.xml
+artificial_intelligence_resume_*.xml
 data_science_resume_*.xml
+python_dev_resume_*.xml
+web_dev_resume_*.xml
 resume_scratch.xml
 Resume MindMap_scratch.mm
 *.docx
 *.txt
 *.html
+prog.py

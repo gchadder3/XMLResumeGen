@@ -1,6 +1,6 @@
 <resume-info>
 
-<last-update-date>September 24, 2021</last-update-date>
+<last-update-date>September 25, 2021</last-update-date>
 
 <heading-info>
   <name>George Chadderdon</name>
@@ -12,7 +12,7 @@
 </heading-info>
 
 <objective sectionname="Objective">
-  <general-option>Developer / Analyst in machine learning, AI, or data science</general-option>
+  <general-option choose="true">Developer / Analyst in machine learning, AI, or data science</general-option>
   <machine-learning-option>Machine Learning Engineer</machine-learning-option>
   <artificial-intelligence-option>Artificial Intelligence Engineer</artificial-intelligence-option>
   <data-science-option>Data Scientist</data-science-option>
@@ -30,6 +30,15 @@
 </summary>
 
 <qualifications-skills sectionname="Qualifications / Technical Skills">
+  <!-- for artificial intelligence resume -->
+  <qual-skill-item>Over 20 years of industry and academic experience in artificial intelligence, pattern recognition, and machine learning</qual-skill-item>
+  
+  <!-- for machine learning resume -->
+<!--  <qual-skill-item>17 years of industry and academic experience in machine learning, pattern recognition, and statistical data analysis</qual-skill-item> -->
+  
+  <!-- for data science resume -->
+<!--  <qual-skill-item>17 years of industry and academic experience in statistical data analysis, pattern recognition, and machine learning</qual-skill-item> -->
+  
   <qual-skill-list>
     <qual-skill-class>10 years of industry software development experience applied to</qual-skill-class>
     <qual-skill-item>physiological stress detection</qual-skill-item>
@@ -42,8 +51,6 @@
     <qual-skill-item>global health program optimization</qual-skill-item>
     <qual-skill-item>webifying of scientific data presentation</qual-skill-item>
   </qual-skill-list>
-  
-  <qual-skill-item>17 years of industry and academic experience in statistical data analysis, pattern recognition, and machine learning</qual-skill-item>
   
   <qual-skill-list>
     <qual-skill-class>Strong educational / research background in</qual-skill-class>
@@ -71,6 +78,9 @@
   
   <qual-skill-list>
     <qual-skill-class>AI / ML / Pattern Recognition Techniques</qual-skill-class>
+    <qual-skill-item>regression</qual-skill-item>
+    <qual-skill-item>support vector machines</qual-skill-item>
+    <qual-skill-item>decision trees</qual-skill-item>    
     <qual-skill-item>neural networks</qual-skill-item>
     <qual-skill-item>hidden Markov modeling</qual-skill-item>
     <qual-skill-item>evolutionary programming</qual-skill-item>
@@ -97,6 +107,7 @@
     <qual-skill-item>Python (numpy/scipy/matplotlib/pandas/scikit-learn)</qual-skill-item>
     <qual-skill-item>Excel</qual-skill-item>
     <qual-skill-item>R (RStudio)</qual-skill-item>
+    <qual-skill-item>SPSS</qual-skill-item>
     <qual-skill-item>MATLAB</qual-skill-item>
   </qual-skill-list>
 
@@ -111,8 +122,8 @@
 
   <qual-skill-list>
     <qual-skill-class>Programming Languages</qual-skill-class>
-    <qual-skill-item>Python (over 5 years)</qual-skill-item>
-    <qual-skill-item>C/C++</qual-skill-item>
+    <qual-skill-item>Python (8 years)</qual-skill-item>
+    <qual-skill-item>C/C++ (9 years)</qual-skill-item>
     <qual-skill-item>JavaScript (ES6)</qual-skill-item>
     <qual-skill-item>Java</qual-skill-item>
     <qual-skill-item>R</qual-skill-item>
