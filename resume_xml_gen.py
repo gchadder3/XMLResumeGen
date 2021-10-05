@@ -1,7 +1,7 @@
 """
 resume_xml_parse.py -- resume parser
 
-Last updated: 9/24/21 (gchadder3)
+Last updated: 10/4/21 (gchadder3)
 """
 
 import argparse
@@ -24,58 +24,6 @@ htmlEndText_1 = """
 </html>
 """
 
-htmlStartText_2 = """<html>
-
-<head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Consolas;
-	panose-1:2 11 6 9 2 2 4 3 2 4;}
- /* Style Definitions */
- p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
-	{mso-style-link:"Plain Text Char";
-	margin:0in;
-	font-size:10.5pt;
-	font-family:Consolas;}
-span.PlainTextChar
-	{mso-style-name:"Plain Text Char";
-	mso-style-link:"Plain Text";
-	font-family:Consolas;}
-.MsoChpDefault
-	{font-family:"Calibri",sans-serif;}
-.MsoPapDefault
-	{margin-bottom:8.0pt;
-	line-height:107%;}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 75.1pt 1.0in 75.05pt;}
-div.WordSection1
-	{page:WordSection1;}
--->
-</style>
-
-</head>
-
-<body lang=EN-US style='word-wrap:break-word'>
-
-<div class=WordSection1>
-"""
-
-htmlEndText_2 = """
-</div>
-
-</body>
-
-</html>
-"""
-
 if __name__ == '__main__':
     # Parse the arguments from the command line.
     parser = argparse.ArgumentParser(description='Parse an XML resume file and format and output a resume from it.')
@@ -85,9 +33,12 @@ if __name__ == '__main__':
     inFileName = 'resume_xml.xml'  # set the default in XML file
     if args.infile is not None:
         inFileName = args.infile
-    outFormat = 'plaintext_1'      # set the format ('plaintext_1', 'html_1', 'html_2')
+    outFormat = 'plaintext_1'      # set the format ('plaintext_1', 'ats_1', 'html_1')
     if args.format is not None:
         outFormat = args.format
+        
+    # Set some formatting parameters.
+    plaintext_1_tabIndent = False
     
     # Extract the tree from the file.
     tree = ET.parse(inFileName)
@@ -99,8 +50,6 @@ if __name__ == '__main__':
     # If HTML, create initial boiler-plate...
     if outFormat == 'html_1':
         print(htmlStartText_1)
-    elif outFormat == 'html_2':
-        print(htmlStartText_2)
        
     # Heading section...
     hinfo = root.find('./heading-info')
@@ -108,22 +57,57 @@ if __name__ == '__main__':
         raise LookupError('No <heading-info> tag found in file.')
     if outFormat == 'html_1':
         print('<div id="heading-info">')
+    # For each child element...
     for hitem in hinfo:
-        if outFormat == 'html_1':
-            if hitem.tag == 'name':
-                html_temp = """<p align=center style='text-align:center; margin:0px'><b>%s</b></p>"""
-            else:
-                html_temp = """<p align=center style='text-align:center; margin:0px'>%s</p>"""     
-        elif outFormat == 'html_2':
-            if hitem.tag == 'name':
-                html_temp = """<p class=MsoPlainText align=center style='text-align:center'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>%s</span></b></p>"""
-            else:
-                html_temp = """<p class=MsoPlainText align=center style='text-align:center'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>%s</span></p>"""
         theField = fieldSanitize(hitem.text)
-        if outFormat == 'plaintext_1':
-            print(theField)
-        elif outFormat == 'html_1':
-            print(html_temp % theField)
+        if hitem.tag == 'name':
+            if outFormat == 'plaintext_1':
+                print(theField)
+            elif outFormat == 'ats_1':
+                print('NAME: %s' % theField)
+            elif outFormat == 'html_1':
+                html_temp = """<p align=center style='text-align:center; margin:0px'><b>%s</b></p>"""
+                print(html_temp % theField)                
+        elif hitem.tag == 'phone-number':
+            if outFormat == 'plaintext_1':
+                print(theField)
+            elif outFormat == 'ats_1':
+                print('PHONE: %s' % theField)
+            elif outFormat == 'html_1':
+                html_temp = """<p align=center style='text-align:center; margin:0px'>%s</p>"""
+                print(html_temp % theField)
+        elif hitem.tag == 'email':
+            if outFormat == 'plaintext_1':
+                print(theField)
+            elif outFormat == 'ats_1':
+                print('EMAIL: %s' % theField)
+            elif outFormat == 'html_1':
+                html_temp = """<p align=center style='text-align:center; margin:0px'>%s</p>"""
+                print(html_temp % theField)
+        elif hitem.tag == 'location':
+            if outFormat == 'plaintext_1':
+                print(theField)
+            elif outFormat == 'ats_1':
+                print('LOCATION: %s' % theField)
+            elif outFormat == 'html_1':
+                html_temp = """<p align=center style='text-align:center; margin:0px'>%s</p>"""
+                print(html_temp % theField)
+        elif hitem.tag == 'linkedin-url':
+            if outFormat == 'plaintext_1':
+                print(theField)
+            elif outFormat == 'ats_1':
+                print('LINKEDIN: %s' % theField)
+            elif outFormat == 'html_1':
+                html_temp = """<p align=center style='text-align:center; margin:0px'>%s</p>"""
+                print(html_temp % theField)
+        elif hitem.tag == 'github-url':
+            if outFormat == 'plaintext_1':
+                print(theField)
+            elif outFormat == 'ats_1':
+                print('GITHUB: %s' % theField)
+            elif outFormat == 'html_1':
+                html_temp = """<p align=center style='text-align:center; margin:0px'>%s</p>"""
+                print(html_temp % theField)
     if outFormat == 'html_1':
         print('</div>')
     
@@ -137,6 +121,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s: %s' % (headingStr, theField))
+        elif outFormat == 'ats_1':
+            print('%s: %s' % (headingStr, theField))
         elif outFormat == 'html_1':
             print('<div id="objective">')
             print('<p><u>%s</u>: %s</p>' % (headingStr, theField))
@@ -149,6 +135,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s:' % headingStr)
+        elif outFormat == 'ats_1':
+            print('%s:' % headingStr)            
         elif outFormat == 'html_1':
             print('<div id="summary">')
             print('<p style="margin-bottom:0px"><u>%s</u>:</p>' % headingStr)  
@@ -161,7 +149,9 @@ if __name__ == '__main__':
             firstsumitem = False
         if outFormat == 'plaintext_1':
             print('')
-        if outFormat == 'html_1':
+        elif outFormat == 'ats_1':
+            print('')            
+        elif outFormat == 'html_1':
             print('</p>')        
             print('</div>') 
             
@@ -172,6 +162,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s:' % headingStr)
+        elif outFormat == 'ats_1':
+            print('TECHNICAL SKILLS:')            
         elif outFormat == 'html_1':
             print('<div id="qualifications-skills">')
             print('<p style="margin-bottom:0px"><u>%s</u>:</p>' % headingStr)
@@ -181,13 +173,21 @@ if __name__ == '__main__':
             if qelem.tag == 'qual-skill-item':
                 qelemText = fieldSanitize(qelem.text)
                 if outFormat == 'plaintext_1':
-                    print('\t* %s' % qelemText, end='')
+                    if plaintext_1_tabIndent:
+                        print('\t', end='')
+                    print('* %s' % qelemText, end='')
+                elif outFormat == 'ats_1': 
+                    print('* %s' % qelemText, end='')
                 elif outFormat == 'html_1':
                     print('<li style="margin-top:0px">%s' % qelemText, end='')           
             elif qelem.tag == 'qual-skill-list': 
                 className = fieldSanitize(qelem.find('qual-skill-class').text)
                 if outFormat == 'plaintext_1':
-                    print('\t* %s: ' % className, end='')
+                    if plaintext_1_tabIndent:
+                        print('\t', end='')                
+                    print('* %s: ' % className, end='')
+                elif outFormat == 'ats_1': 
+                    print('* %s: ' % className, end='')
                 elif outFormat == 'html_1':
                     print('<li style="margin-top:0px">%s: ' % className, end='')            
                 firstqitem = True
@@ -196,9 +196,10 @@ if __name__ == '__main__':
                         print(', ', end='')
                     print(fieldSanitize(qitem.text), end='')
                     firstqitem = False
-                
             if outFormat == 'plaintext_1':
                 print('')
+            elif outFormat == 'ats_1':
+                print('')                
             elif outFormat == 'html_1':
                 print('</li>')                
         if outFormat == 'html_1':
@@ -214,6 +215,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s:' % headingStr)
+        elif outFormat == 'ats_1':
+            print('%s:' % headingStr)            
         elif outFormat == 'html_1':
             print('<div id="work-experience">')
             print('<p style="margin:0px"><u>%s</u>:</p>' % headingStr)
@@ -239,10 +242,22 @@ if __name__ == '__main__':
                 print(', ', end='')
                 print(loc)
                 for ritem in expitem.iter('role-item'):
-                    print('\t* ', end='')
+                    if plaintext_1_tabIndent:
+                        print('\t', end='')
+                    print('* ', end='')
                     print(fieldSanitize(ritem.text))
                 if desc is not None:
                     print(desc)
+            elif outFormat == 'ats_1':
+                print('COMPANY: %s' % org)
+                print('LOCATION: %s' % loc)
+                print('JOB TITLE: %s' % job_title)
+                print('START DATE: %s' % start_date)
+                print('END DATE: %s' % end_date)
+                print('DESCRIPTION:')
+                for ritem in expitem.iter('role-item'):
+                    print('* ', end='')
+                    print(fieldSanitize(ritem.text))   
             elif outFormat == 'html_1':
                 print('<div class="experience-item">')
                 print('<p style="margin:0px">%s-%s <b>%s, %s, %s</b></p>' % (start_date, end_date, job_title, org, loc))
@@ -265,9 +280,12 @@ if __name__ == '__main__':
         print('')    
         if outFormat == 'plaintext_1':
             print('%s:' % headingStr)
+        elif outFormat == 'ats_1':
+            print('%s:' % headingStr)           
         elif outFormat == 'html_1':
             print('<div id="education">')
-            print('<p style="margin:0px"><u>%s</u>:</p>' % headingStr)    
+            print('<p style="margin:0px"><u>%s</u>:</p>' % headingStr)
+        firsteduitem = True            
         # For each education-item...
         for editem in edu.iter('education-item'):
             inst = editem.find('institution')
@@ -300,9 +318,24 @@ if __name__ == '__main__':
                     print(grad_year, end='')
                 print('')
                 for mitem in editem.iter('more-info'):
-                    print('\t* ', end='')
+                    if plaintext_1_tabIndent:
+                        print('\t', end='')
+                    print('* ', end='')
                     print(fieldSanitize(mitem.text), end='')
                     print('')
+            elif outFormat == 'ats_1':
+                if not firsteduitem:
+                    print('')            
+                if deg is not None:
+                    print('DEGREE: ', end='')
+                    print(deg, end='')
+                    if maj is not None:
+                        print(' in ', end='')
+                        print(maj, end='')
+                    print('')
+                print('SCHOOL: %s' % inst)            
+                if grad_year is not None:
+                    print('GRADUATION YEAR: %s' % grad_year)
             elif outFormat == 'html_1':
                 print('<p style="margin:0px">%s' % inst, end='')
                 if deg is not None:
@@ -321,7 +354,8 @@ if __name__ == '__main__':
                     for mitem in editem.iter('more-info'):
                         theField = fieldSanitize(mitem.text)
                         print('<li style="margin:0px">%s</li>' % theField)
-                    print('</ul>')              
+                    print('</ul>')
+            firsteduitem = False                    
         if outFormat == 'html_1':
             print('</div>')
             
@@ -332,6 +366,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s:' % headingStr)
+        elif outFormat == 'ats_1':
+            print('%s:' % headingStr)           
         elif outFormat == 'html_1':
             print('<div id="special-coursework">')
             print('<p style="margin-bottom:0px"><u>%s</u>:</p>' % headingStr)  
@@ -344,6 +380,8 @@ if __name__ == '__main__':
             firstcwitem = False
         if outFormat == 'plaintext_1':
             print('')
+        elif outFormat == 'ats_1':
+            print('')            
         elif outFormat == 'html_1':
             print('</p>')        
             print('</div>') 
@@ -355,6 +393,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s (see LinkedIn page for validations):' % headingStr)
+        elif outFormat == 'ats_1':
+            print('%s:' % headingStr)           
         elif outFormat == 'html_1':
             print('<div id="certifications">')
             print('<p style="margin-bottom:0px"><u>%s</u> (see LinkedIn page for validations):</p>' % headingStr)           
@@ -366,6 +406,8 @@ if __name__ == '__main__':
             print(fieldSanitize(citem.text), end='')
             firstcitem = False
         if outFormat == 'plaintext_1':
+            print('')
+        elif outFormat == 'ats_1':
             print('')            
         elif outFormat == 'html_1':
             print('</p>')        
@@ -379,6 +421,8 @@ if __name__ == '__main__':
         print('')
         if outFormat == 'plaintext_1':
             print('%s: %s' % (headingStr, theField))
+        elif outFormat == 'ats_1':
+            print('%s: %s' % (headingStr, theField))            
         elif outFormat == 'html_1':
             print('<div id="additional-info">')
             print('<p><u>%s</u>: %s</p>' % (headingStr, theField))
@@ -386,6 +430,4 @@ if __name__ == '__main__':
                 
     # If HTML, create end boiler-plate...
     if outFormat == 'html_1':
-        print(htmlEndText_1)
-    elif outFormat == 'html_2':
-        print(htmlEndText_2)        
+        print(htmlEndText_1)       
