@@ -1,10 +1,11 @@
 """
 resume_xml_parse.py -- resume parser
 
-Last updated: 10/4/21 (gchadder3)
+Last updated: 8/5/22 (gchadder3)
 """
 
 import argparse
+import os
 import xml.etree.ElementTree as ET
 import re
 
@@ -26,9 +27,15 @@ htmlEndText_1 = """
 
 if __name__ == '__main__':
     # Parse the arguments from the command line.
-    parser = argparse.ArgumentParser(description='Parse an XML resume file and format and output a resume from it.')
-    parser.add_argument('-i', '--infile')
-    parser.add_argument('-f', '--format')
+    parser = argparse.ArgumentParser(
+        description='Parse an XML resume file and format and output a resume from it.')
+    parser.add_argument('infile', nargs='?',
+        default='resume_xml.xml', 
+        help='XML file containing the resume information (default="resume_xml.xml")')
+    parser.add_argument('-f', '--format', 
+        choices=['plaintext_1', 'ats_1', 'html_1'], 
+        default='plaintext_1',     
+        help='resume output format (default="plaintext_1")')
     args = parser.parse_args()   
     inFileName = 'resume_xml.xml'  # set the default in XML file
     if args.infile is not None:
@@ -36,6 +43,15 @@ if __name__ == '__main__':
     outFormat = 'plaintext_1'      # set the format ('plaintext_1', 'ats_1', 'html_1')
     if args.format is not None:
         outFormat = args.format
+
+    # Command args debugging...
+    # print(args)
+    # exit()
+
+    # Give an error if the file we're trying to load is missing.
+    if not os.path.exists(inFileName):
+        print("ERROR: File '%s' is not found." % inFileName)
+        exit()
         
     # Set some formatting parameters.
     plaintext_1_tabIndent = False
