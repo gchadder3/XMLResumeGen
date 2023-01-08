@@ -1,7 +1,7 @@
 """
 resume_xml_parse.py -- resume parser
 
-Last updated: 8/5/22 (gchadder3)
+Last updated: 10/8/22 (gchadder3)
 """
 
 import argparse
@@ -131,7 +131,8 @@ if __name__ == '__main__':
     obj = root.find('./objective')
     if obj is not None and not('hide' in obj.attrib and obj.attrib['hide'].lower() == 'true'):
 #        objchoice = obj.find('data-science-option')
-        objchoice = obj.find('general-option')
+#        objchoice = obj.find('general-option')
+        objchoice = obj.find('current-job-option')
         headingStr = obj.attrib['sectionname'].upper()
         theField = fieldSanitize(objchoice.text)
         print('')

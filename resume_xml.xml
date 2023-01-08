@@ -1,6 +1,6 @@
 <resume-info>
 
-<last-update-date>September 25, 2021</last-update-date>
+<last-update-date>January 8, 2023</last-update-date>
 
 <heading-info>
   <name>George Chadderdon</name>
@@ -12,12 +12,13 @@
 </heading-info>
 
 <objective sectionname="Objective">
-  <general-option choose="true">Developer / Analyst in machine learning, AI, or data science</general-option>
+  <general-option>Developer / Analyst in machine learning, AI, or data science</general-option>
   <machine-learning-option>Machine Learning Engineer</machine-learning-option>
   <artificial-intelligence-option>Artificial Intelligence Engineer</artificial-intelligence-option>
   <data-science-option>Data Scientist</data-science-option>
   <python-dev-option>Python Developer</python-dev-option>
   <web-dev-option>Web Developer</web-dev-option>
+  <current-job-option choose="true">Continuation of Cognitive Modeler work at CAE as permanent employee</current-job-option>
 </objective>
 
 <summary sectionname="Summary">
@@ -40,7 +41,8 @@
 <!--  <qual-skill-item>17 years of industry and academic experience in statistical data analysis, pattern recognition, and machine learning</qual-skill-item> -->
   
   <qual-skill-list>
-    <qual-skill-class>10 years of industry software development experience applied to</qual-skill-class>
+    <qual-skill-class>Over 10 years of industry software development experience applied to</qual-skill-class>
+    <qual-skill-item>natural language processing/understanding</qual-skill-item>
     <qual-skill-item>physiological stress detection</qual-skill-item>
     <qual-skill-item>speech recognition</qual-skill-item>
     <qual-skill-item>target detection and tracking</qual-skill-item>
@@ -92,7 +94,8 @@
   </qual-skill-list>
   
   <qual-skill-list>
-    <qual-skill-class>Expert Systems</qual-skill-class>
+    <qual-skill-class>Expert Systems / Cognitive Architectures</qual-skill-class>
+    <qual-skill-item>ACT-R</qual-skill-item>
     <qual-skill-item>JESS</qual-skill-item>
     <qual-skill-item>Soar</qual-skill-item>
   </qual-skill-list>
@@ -126,6 +129,7 @@
     <qual-skill-item>C/C++ (9 years)</qual-skill-item>
     <qual-skill-item>JavaScript (ES6)</qual-skill-item>
     <qual-skill-item>Java</qual-skill-item>
+    <qual-skill-item>Common LISP</qual-skill-item>
     <qual-skill-item>R</qual-skill-item>
     <qual-skill-item>PHP</qual-skill-item>
     <qual-skill-item>MATLAB/Octave</qual-skill-item>
@@ -135,7 +139,7 @@
   <qual-skill-list>
     <qual-skill-class>Operating Systems</qual-skill-class>
     <qual-skill-item>Linux/UNIX</qual-skill-item>
-    <qual-skill-item>Windows 10</qual-skill-item>
+    <qual-skill-item>Windows 11</qual-skill-item>
   </qual-skill-list>
   
   <qual-skill-list>
@@ -176,6 +180,31 @@
 </qualifications-skills>
 
 <work-experience sectionname="Experience">
+  <experience-item>
+    <start-date>2/22</start-date>
+    <end-date>-</end-date>
+    <job-title>Cognitive Modeler</job-title>
+    <organization>CAE USA</organization>
+    <location>Remote</location>
+    <roles>
+      <role-item>
+        Research and development for knowledge gap detection, identification, and resolution in synthetic teammate agents using natural language processing (NLP) for understanding and generating text communications and situated behaviors.
+      </role-item>
+      <role-item>
+        Developed (and am currently refining) ACT-R- and Common LISP-based model agent prototype for executing simulated tasks encoded in finite state machines (FSMs) and knowledge graphs (KGs).
+      </role-item>
+      <role-item>
+        Developed (and will be refining) an interactive chatbot solution for translating typed text task instructions into FSM+KG task representations, with aim of enabling instruction-based learning of novel tasks.
+      </role-item>        
+      <role-item>
+        Modeling physioocognitive effects of blood concentrations of chemical substances.
+      </role-item>
+      <role-item>
+        Wrote an annotated bibliography (and will write a literature review) on the neuropathological effects of hypoxia on human cognitive function.
+      </role-item>
+    </roles>  
+  </experience-item>
+  
   <experience-item>
     <start-date>3/17</start-date>
     <end-date>8/19</end-date>
